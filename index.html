@@ -1,195 +1,295 @@
-import React from 'react';
-import { MapPin, Calendar, Home, Euro, Car, FileText, Phone, Mail, CheckCircle } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINDEN.PARK 第二期 | 慕尼黑高端新盘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1E3A8A', // 类似于原网站的深色品牌色
+                        secondary: '#D97706', // 强调色
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            /* 使用 Unsplash 占位图替代实际项目渲染图 */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
 
-export default function RealEstateProject() {
-  return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
-      {/* 导航栏 */}
-      <header className="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
-        <div className="text-2xl font-bold tracking-tighter">CONCEPT<span className="text-emerald-600">BAU</span></div>
-        <nav className="hidden md:flex space-x-6 text-sm font-medium">
-          <a href="#" className="hover:text-emerald-600">项目列表</a>
-          <a href="#" className="hover:text-emerald-600">关于我们</a>
-          <a href="#" className="hover:text-emerald-600">博客与资讯</a>
-          <a href="#" className="hover:text-emerald-600">联系方式</a>
-        </nav>
-        <button className="bg-gray-900 text-white px-4 py-2 text-sm font-medium rounded hover:bg-emerald-600 transition">
-          预约咨询
-        </button>
-      </header>
-
-      {/* 英雄区块 (Hero Section) */}
-      <section className="relative h-[60vh] bg-gray-200 flex items-center justify-center overflow-hidden">
-        {/* 此处可替换为真实的建筑效果图 URL */}
-        <img 
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-          alt="LINDEN.PARK 建筑外观" 
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h2 className="text-lg md:text-xl font-medium tracking-widest uppercase mb-2">Milbertshofen / Am Hart</h2>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">LINDEN.PARK</h1>
-          <p className="text-xl md:text-2xl font-light mb-8">第二期 (BAUABSCHNITT 2)</p>
-          <button className="bg-emerald-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-emerald-700 transition">
-            获取楼书 (EXPOSÉ)
-          </button>
-        </div>
-      </section>
-
-      {/* 核心数据 (Key Facts) */}
-      <section className="max-w-6xl mx-auto px-4 py-12 -mt-16 relative z-20">
-        <div className="bg-white rounded-lg shadow-xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex flex-col items-center text-center">
-            <Home className="w-8 h-8 text-emerald-600 mb-2" />
-            <span className="text-sm text-gray-500 uppercase">户型</span>
-            <span className="font-semibold text-lg">1.5 - 4 居室</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <MapPin className="w-8 h-8 text-emerald-600 mb-2" />
-            <span className="text-sm text-gray-500 uppercase">面积</span>
-            <span className="font-semibold text-lg">约 34 - 111 m²</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <Euro className="w-8 h-8 text-emerald-600 mb-2" />
-            <span className="text-sm text-gray-500 uppercase">售价</span>
-            <span className="font-semibold text-lg">36.9万 - 110.9万 €</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <Calendar className="w-8 h-8 text-emerald-600 mb-2" />
-            <span className="text-sm text-gray-500 uppercase">预计交房</span>
-            <span className="font-semibold text-lg">2027年 第一季度</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 项目进度 (Progress) */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <h3 className="text-2xl font-bold text-center mb-8">项目进度</h3>
-          <div className="flex justify-between items-center relative">
-            <div className="absolute left-0 top-1/2 w-full h-1 bg-gray-300 -z-10 transform -translate-y-1/2"></div>
-            {['开盘销售', '正式动工', '主体封顶', '室内装修', '交付使用'].map((step, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white mb-2 ${index <= 1 ? 'bg-emerald-600' : 'bg-gray-300'}`}>
-                  {index <= 1 ? <CheckCircle className="w-5 h-5" /> : <span className="text-sm">{index + 1}</span>}
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary tracking-widest">LINDEN.PARK</a>
                 </div>
-                <span className={`text-sm ${index <= 1 ? 'font-bold text-gray-900' : 'text-gray-500'}`}>{step}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 项目介绍与图集 (Description & Gallery) */}
-      <section className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h3 className="text-3xl font-bold mb-4">自然与现代的完美结合</h3>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            LINDEN.PARK 第2期为您提供高品质的现代产权公寓。建筑的现代风格与周边社区和谐相融，可直接俯瞰相邻的自然保护区。两栋独立住宅均设有专属入口，背面配备儿童游乐设施及休闲座椅，为您打造宁静舒适的居住体验。
-          </p>
-          <ul className="space-y-3 mb-6 text-gray-700">
-            <li className="flex items-center"><CheckCircle className="w-5 h-5 text-emerald-600 mr-2" /> 地下停车场 (可配充电桩)</li>
-            <li className="flex items-center"><CheckCircle className="w-5 h-5 text-emerald-600 mr-2" /> KFW 节能标准 (能源效率 B 级)</li>
-            <li className="flex items-center"><CheckCircle className="w-5 h-5 text-emerald-600 mr-2" /> 区域集中供暖</li>
-          </ul>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          {/* 占位图，可替换为真实效果图 */}
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80" alt="客厅" className="rounded-lg shadow-md hover:opacity-90 transition" />
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&q=80" alt="浴室" className="rounded-lg shadow-md hover:opacity-90 transition" />
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="卧室" className="rounded-lg shadow-md hover:opacity-90 transition" />
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80" alt="外观" className="rounded-lg shadow-md hover:opacity-90 transition" />
-        </div>
-      </section>
-
-      {/* 房源及价格表 (Floor Plans & Prices) */}
-      <section className="bg-white py-16 border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="mb-8 text-center">
-            <h3 className="text-3xl font-bold mb-2">户型与价格</h3>
-            <p className="text-gray-500">🌸 春季特惠：前5名预订客户可享受最高 25,000 € 购房减免 🌸</p>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-100 text-gray-600">
-                  <th className="p-4 font-medium rounded-tl-lg">房号</th>
-                  <th className="p-4 font-medium">居室</th>
-                  <th className="p-4 font-medium">面积</th>
-                  <th className="p-4 font-medium">楼层</th>
-                  <th className="p-4 font-medium">售价</th>
-                  <th className="p-4 font-medium rounded-tr-lg">户型图</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { unit: '214', rooms: '3', size: '70 m²', floor: '3. OG', price: '699,000 €' },
-                  { unit: '216', rooms: '3', size: '74 m²', floor: 'DG (顶楼)', price: '759,000 €' },
-                  { unit: '231', rooms: '4', size: '100 m²', floor: '3. OG', price: '949,000 €' },
-                  { unit: '233', rooms: '4', size: '111 m²', floor: 'DG (顶楼)', price: '1,109,000 €' },
-                  { unit: '246', rooms: '3', size: '66 m²', floor: '3. OG', price: '639,000 €' },
-                ].map((apt, idx) => (
-                  <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50 transition">
-                    <td className="p-4 font-medium">{apt.unit}</td>
-                    <td className="p-4">{apt.rooms}</td>
-                    <td className="p-4">{apt.size}</td>
-                    <td className="p-4">{apt.floor}</td>
-                    <td className="p-4 font-semibold text-emerald-600">{apt.price}</td>
-                    <td className="p-4">
-                      <button className="text-gray-500 hover:text-emerald-600 flex items-center">
-                        <FileText className="w-4 h-4 mr-1" /> PDF
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* 联系方式 (Contact) */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-3xl font-bold mb-4">我们的专家随时为您服务。</h3>
-            <p className="text-gray-400 mb-8">
-              我们非常乐意为您提供关于 LINDEN.PARK 项目的个性化咨询服务。寻找属于您的完美住宅。
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-center text-lg">
-                <Phone className="w-6 h-6 text-emerald-500 mr-4" />
-                <span>+49 (0) 89 710 409 116</span>
-              </div>
-              <div className="flex items-center text-lg">
-                <Mail className="w-6 h-6 text-emerald-500 mr-4" />
-                <span>lindenpark@conceptbau.de</span>
-              </div>
-              <div className="flex items-center text-lg">
-                <MapPin className="w-6 h-6 text-emerald-500 mr-4" />
-                <span>Mortonstraße 26, 80937 München</span>
-              </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#overview" class="text-gray-600 hover:text-primary font-medium">项目概览</a>
+                    <a href="#details" class="text-gray-600 hover:text-primary font-medium">设计与亮点</a>
+                    <a href="#apartments" class="text-gray-600 hover:text-primary font-medium">户型与价格</a>
+                    <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-blue-800 transition">联系我们</a>
+                </div>
             </div>
-          </div>
-          <div className="bg-white text-gray-900 p-8 rounded-lg shadow-lg">
-            <h4 className="text-xl font-bold mb-6">预约看房 / 索取资料</h4>
-            <form className="space-y-4">
-              <input type="text" placeholder="您的姓名" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-600" />
-              <input type="email" placeholder="电子邮箱" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-600" />
-              <input type="tel" placeholder="电话号码" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-600" />
-              <button type="submit" className="w-full bg-emerald-600 text-white font-bold py-3 rounded hover:bg-emerald-700 transition">
-                发送请求
-              </button>
-            </form>
-          </div>
         </div>
-      </section>
-      
-      {/* Footer */}
-      <footer className="bg-black text-gray-500 py-8 text-center text-sm">
-        <p>&copy; 2026 CONCEPT BAU GmbH. 此为演示站点 (Demo Site).</p>
-      </footer>
-    </div>
-  );
-}
+    </nav>
+
+    <header class="hero-bg h-screen flex items-center justify-center text-center mt-10">
+        <div class="px-4">
+            <p class="text-white text-lg md:text-xl mb-4 font-light tracking-widest uppercase">慕尼黑 Milbertshofen / Am Hart</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">LINDEN.PARK 第二期</h1>
+            <p class="text-white text-lg md:text-2xl mb-10 font-light">自然与现代建筑的完美交融，寻找您的新家。</p>
+            <a href="#apartments" class="bg-secondary text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-yellow-600 transition shadow-lg">
+                查看可选房源
+            </a>
+        </div>
+    </header>
+
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+                <div>
+                    <i class="fa-solid fa-door-open text-3xl text-primary mb-3"></i>
+                    <h3 class="text-gray-500 text-sm">房间数</h3>
+                    <p class="font-bold text-lg">1.5 - 4 居室</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-ruler-combined text-3xl text-primary mb-3"></i>
+                    <h3 class="text-gray-500 text-sm">居住面积</h3>
+                    <p class="font-bold text-lg">约 34 - 111 m²</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-building text-3xl text-primary mb-3"></i>
+                    <h3 class="text-gray-500 text-sm">总套数</h3>
+                    <p class="font-bold text-lg">49 套</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-car text-3xl text-primary mb-3"></i>
+                    <h3 class="text-gray-500 text-sm">地下车位</h3>
+                    <p class="font-bold text-lg">火热预定中</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-tag text-3xl text-primary mb-3"></i>
+                    <h3 class="text-gray-500 text-sm">售价区间</h3>
+                    <p class="font-bold text-lg">369,000 € 起</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-calendar-check text-3xl text-primary mb-3"></i>
+                    <h3 class="text-gray-500 text-sm">预计交房</h3>
+                    <p class="font-bold text-lg">2027年 第一季度</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="现代室内设计" class="rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">第二期施工阶段正式启动</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    现代化的建筑设计与周边社区完美融合，并可直接俯瞰相邻的自然保护区。这两栋建筑拥有独立的入口，建筑背面设有儿童游乐设施及休闲座椅，为您提供宁静的居住体验。
+                </p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    地址：Mortonstraße 26, 80937 München
+                </p>
+                <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+                    <p class="text-green-800 font-bold"><i class="fa-solid fa-leaf mr-2"></i>绿色节能先锋</p>
+                    <p class="text-sm text-green-700 mt-1">
+                        能效等级 B级。全面接入区域供暖 (Fernwärme)。<br>
+                        终端能源需求 (GEG)：60.9 - 64.7 kWh/m²a。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-primary text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-secondary">🌸 春季特惠活动 🌸</h2>
+            <p class="text-lg mb-6">本项目前五名预订客户，将根据所购房屋的房间数量获得 <strong class="text-yellow-300">每房间 5,000 €</strong> 的直降折扣！</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm font-medium">
+                <div class="bg-white/10 p-3 rounded">1 居室: 降 5k €</div>
+                <div class="bg-white/10 p-3 rounded">2 居室: 降 10k €</div>
+                <div class="bg-white/10 p-3 rounded">3 居室: 降 15k €</div>
+                <div class="bg-white/10 p-3 rounded">4 居室: 降 20k €</div>
+                <div class="bg-white/10 p-3 rounded">5 居室: 降 25k €</div>
+            </div>
+            <p class="text-xs text-gray-300 mt-6">* 活动截止至 2026年4月30日。保留变更及优先售出权。</p>
+        </div>
+    </section>
+
+    <section id="apartments" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">可选户型与价格</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">公寓编号</th>
+                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">楼层</th>
+                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">房间数</th>
+                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">居住面积</th>
+                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">售价</th>
+                            <th class="py-4 px-6 text-center text-sm font-semibold text-gray-600">户型图</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-medium text-gray-900">214</td>
+                            <td class="py-4 px-6 text-gray-600">3. OG (四层)</td>
+                            <td class="py-4 px-6 text-gray-600">3 居室</td>
+                            <td class="py-4 px-6 text-gray-600">约 70 m²</td>
+                            <td class="py-4 px-6 font-bold text-primary">699,000 €</td>
+                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-medium text-gray-900">216</td>
+                            <td class="py-4 px-6 text-gray-600">DG (顶层)</td>
+                            <td class="py-4 px-6 text-gray-600">3 居室</td>
+                            <td class="py-4 px-6 text-gray-600">约 74 m²</td>
+                            <td class="py-4 px-6 font-bold text-primary">759,000 €</td>
+                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-medium text-gray-900">231</td>
+                            <td class="py-4 px-6 text-gray-600">3. OG (四层)</td>
+                            <td class="py-4 px-6 text-gray-600">4 居室</td>
+                            <td class="py-4 px-6 text-gray-600">约 100 m²</td>
+                            <td class="py-4 px-6 font-bold text-primary">949,000 €</td>
+                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-medium text-gray-900">233</td>
+                            <td class="py-4 px-6 text-gray-600">DG (顶层)</td>
+                            <td class="py-4 px-6 text-gray-600">4 居室</td>
+                            <td class="py-4 px-6 text-gray-600">约 111 m²</td>
+                            <td class="py-4 px-6 font-bold text-primary">1,109,000 €</td>
+                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-medium text-gray-900">246</td>
+                            <td class="py-4 px-6 text-gray-600">3. OG (四层)</td>
+                            <td class="py-4 px-6 text-gray-600">3 居室</td>
+                            <td class="py-4 px-6 text-gray-600">约 66 m²</td>
+                            <td class="py-4 px-6 font-bold text-primary">639,000 €</td>
+                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-gray-600 mb-4">没有找到心仪的房源？我们很乐意为您提供个性化的咨询服务，探讨可能的房屋合并方案。</p>
+                <button class="bg-primary text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">索取完整资料</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-1/2 p-10">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">联系我们的销售专家</h2>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
+                                <input type="text" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="您的姓名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">电话</label>
+                                <input type="tel" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="您的电话">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">邮箱</label>
+                            <input type="email" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="您的电子邮箱">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">留言内容</label>
+                            <textarea rows="4" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="您对哪个户型感兴趣？"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-secondary text-white font-bold py-3 rounded-md hover:bg-yellow-600 transition">
+                            发送询价
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2 bg-primary text-white p-10 flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-6">预约专属看房与咨询</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-phone text-2xl mr-4 text-secondary"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">通过电话联系我们</p>
+                                <p class="text-lg font-bold">089 710 409 116</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-envelope text-2xl mr-4 text-secondary"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">通过邮件联系我们</p>
+                                <p class="text-lg font-bold">lindenpark@conceptbau.de</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-2xl mr-4 text-secondary"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">项目开发商</p>
+                                <p class="text-base">CONCEPT BAU GmbH<br>Hans-Cornelius-Str. 4<br>82166 Gräfelfing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">LINDEN.PARK</h4>
+                <p>为您在慕尼黑打造现代化的高端住宅体验。我们建筑价值，我们建筑未来。</p>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">快速链接</h4>
+                <ul class="space-y-2">
+                    <li><a href="#overview" class="hover:text-white transition">项目概览</a></li>
+                    <li><a href="#apartments" class="hover:text-white transition">户型图与价格</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">联系客服</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">法律信息</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">版本说明 (Impressum)</a></li>
+                    <li><a href="#" class="hover:text-white transition">隐私政策 (Datenschutz)</a></li>
+                    <li><a href="#" class="hover:text-white transition">Cookie 设置</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-gray-800 text-center text-xs">
+            <p>&copy; 2026 项目展示模板 (Demo) - 仅供学习与演示 Vercel 部署使用。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
