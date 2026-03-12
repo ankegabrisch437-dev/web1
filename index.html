@@ -15,8 +15,8 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#1E3A8A', // 类似于原网站的深色品牌色
-                        secondary: '#D97706', // 强调色
+                        primary: '#1E3A8A', 
+                        secondary: '#D97706', 
                     }
                 }
             }
@@ -25,7 +25,6 @@
     <style>
         html { scroll-behavior: smooth; }
         .hero-bg {
-            /* 使用 Unsplash 占位图替代实际项目渲染图 */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -36,16 +35,8 @@
 
     <nav class="bg-white shadow-md fixed w-full z-50 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-primary tracking-widest">LINDEN.PARK</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#overview" class="text-gray-600 hover:text-primary font-medium">项目概览</a>
-                    <a href="#details" class="text-gray-600 hover:text-primary font-medium">设计与亮点</a>
-                    <a href="#apartments" class="text-gray-600 hover:text-primary font-medium">户型与价格</a>
-                    <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-blue-800 transition">联系我们</a>
-                </div>
+            <div class="flex items-center h-20">
+                <a href="#" class="text-2xl font-bold text-primary tracking-widest">LINDEN.PARK</a>
             </div>
         </div>
     </nav>
@@ -61,7 +52,7 @@
         </div>
     </header>
 
-    <section id="overview" class="py-16 bg-white">
+    <section id="overview" class="pt-16 pb-10 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
                 <div>
@@ -98,42 +89,33 @@
         </div>
     </section>
 
-    <section id="details" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="现代室内设计" class="rounded-lg shadow-xl">
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">第二期施工阶段正式启动</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                    现代化的建筑设计与周边社区完美融合，并可直接俯瞰相邻的自然保护区。这两栋建筑拥有独立的入口，建筑背面设有儿童游乐设施及休闲座椅，为您提供宁静的居住体验。
-                </p>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    地址：Mortonstraße 26, 80937 München
-                </p>
-                <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
-                    <p class="text-green-800 font-bold"><i class="fa-solid fa-leaf mr-2"></i>绿色节能先锋</p>
-                    <p class="text-sm text-green-700 mt-1">
-                        能效等级 B级。全面接入区域供暖 (Fernwärme)。<br>
-                        终端能源需求 (GEG)：60.9 - 64.7 kWh/m²a。
-                    </p>
-                </div>
-            </div>
-        </div>
+    <section class="pb-16 bg-white text-center">
+        <a href="#" target="_blank" class="inline-block bg-primary text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-blue-800 transition transform hover:scale-105">
+            <i class="fa-solid fa-vr-cardboard mr-2"></i> 点击进入 360° 全景沉浸式看房
+        </a>
     </section>
 
-    <section class="py-12 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4 text-secondary">🌸 春季特惠活动 🌸</h2>
-            <p class="text-lg mb-6">本项目前五名预订客户，将根据所购房屋的房间数量获得 <strong class="text-yellow-300">每房间 5,000 €</strong> 的直降折扣！</p>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm font-medium">
-                <div class="bg-white/10 p-3 rounded">1 居室: 降 5k €</div>
-                <div class="bg-white/10 p-3 rounded">2 居室: 降 10k €</div>
-                <div class="bg-white/10 p-3 rounded">3 居室: 降 15k €</div>
-                <div class="bg-white/10 p-3 rounded">4 居室: 降 20k €</div>
-                <div class="bg-white/10 p-3 rounded">5 居室: 降 25k €</div>
+    <section id="description" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">关于 LINDEN.PARK 第二期</h2>
+            <div class="text-gray-600 text-lg leading-relaxed space-y-6">
+                <p>
+                    现代化的建筑设计与周边社区完美融合，并可直接俯瞰相邻的自然保护区。这两栋建筑拥有独立的入口，建筑背面设有儿童游乐设施及休闲座椅，为您提供宁静而私密的居住体验。
+                </p>
+                <p>
+                    在这里，自然生态与城市的便利无缝衔接。无论是在宽敞的阳台上享受清晨的第一缕阳光，还是在周边的绿地中散步，LINDEN.PARK 都为您打造了一个理想的现代生活空间。
+                </p>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mt-8 flex items-start gap-4">
+                    <i class="fa-solid fa-leaf text-3xl text-green-500 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-2">绿色节能先锋</h4>
+                        <p class="text-sm">
+                            能效等级 B级。全面接入慕尼黑区域供暖网络 (Fernwärme)，保障您的低碳生活。<br>
+                            终端能源需求 (GEG)：60.9 - 64.7 kWh/m²a。
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p class="text-xs text-gray-300 mt-6">* 活动截止至 2026年4月30日。保留变更及优先售出权。</p>
         </div>
     </section>
 
@@ -197,16 +179,31 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mt-8 text-center">
-                <p class="text-gray-600 mb-4">没有找到心仪的房源？我们很乐意为您提供个性化的咨询服务，探讨可能的房屋合并方案。</p>
-                <button class="bg-primary text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">索取完整资料</button>
+        </div>
+    </section>
+
+    <section id="location" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">项目位置</h2>
+            <p class="text-center text-gray-600 mb-10"><i class="fa-solid fa-location-dot text-primary mr-2"></i>Mortonstraße 26, 80937 München</p>
+            
+            <div class="w-full h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg border border-gray-200">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.886470381655!2d11.564562076891083!3d48.22810815217992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e76f5de999db7%3A0x6a0a09e0a81152a5!2sMortonstra%C3%9Fe%2026%2C%2080937%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-gray-100">
+    <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+            <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row border border-gray-100">
                 <div class="md:w-1/2 p-10">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">联系我们的销售专家</h2>
                     <form action="#" method="POST" class="space-y-4">
@@ -264,30 +261,18 @@
     </section>
 
     <footer class="bg-gray-900 text-gray-400 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
             <div>
                 <h4 class="text-white text-lg font-bold mb-4">LINDEN.PARK</h4>
                 <p>为您在慕尼黑打造现代化的高端住宅体验。我们建筑价值，我们建筑未来。</p>
             </div>
             <div>
-                <h4 class="text-white text-lg font-bold mb-4">快速链接</h4>
-                <ul class="space-y-2">
-                    <li><a href="#overview" class="hover:text-white transition">项目概览</a></li>
-                    <li><a href="#apartments" class="hover:text-white transition">户型图与价格</a></li>
-                    <li><a href="#contact" class="hover:text-white transition">联系客服</a></li>
-                </ul>
-            </div>
-            <div>
                 <h4 class="text-white text-lg font-bold mb-4">法律信息</h4>
-                <ul class="space-y-2">
+                <ul class="space-y-2 flex gap-4">
                     <li><a href="#" class="hover:text-white transition">版本说明 (Impressum)</a></li>
                     <li><a href="#" class="hover:text-white transition">隐私政策 (Datenschutz)</a></li>
-                    <li><a href="#" class="hover:text-white transition">Cookie 设置</a></li>
                 </ul>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-gray-800 text-center text-xs">
-            <p>&copy; 2026 项目展示模板 (Demo) - 仅供学习与演示 Vercel 部署使用。</p>
         </div>
     </footer>
 
