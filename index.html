@@ -3,30 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINDENPARK | Exklusives Wohnen in München</title>
+    <title>Lindenpark Residenz - Ihr neues Zuhause</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Noto Serif Display', serif; }
-        .sticky-nav { backdrop-filter: blur(12px); background: rgba(255,255,255,0.85); }
-        .hero-gradient { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); }
+        /* 沉浸式首屏背景图设置 */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
-<body class="bg-white text-zinc-900 overflow-x-hidden">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <nav class="fixed w-full z-50 py-4 px-8 flex justify-between items-center sticky-nav border-b border-zinc-100">
-        <div class="text-xl tracking-[0.3em] font-light uppercase">Linden<span class="font-bold">park</span></div>
-        <div class="hidden lg:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400">
-            <a href="#hero" class="hover:text-black transition">Home</a>
-            <a href="#lage" class="hover:text-black transition">Lage</a>
-            <a href="#ausstattung" class="hover:text-black transition">Ausstattung</a>
-            <a href="#wohnungen" class="hover:text-black transition text-zinc-900">Wohnungen (20)</a>
-            <a href="#kontakt" class="bg-zinc-900 text-white px-5 py-2 hover:bg-black transition">Anfragen</a>
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">Lindenpark Residenz</h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl">Modernes Wohnen im Herzen von München. Exklusive Eigentumswohnungen mit höchstem Komfort und bester Energieeffizienz.</p>
+        <div class="flex space-x-4">
+            <a href="#wohnungen" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded transition duration-300">Wohnungen ansehen</a>
+            <a href="#kontakt" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded transition duration-300">Kontakt aufnehmen</a>
         </div>
-    </nav>
+    </header>
 
-    <section id="hero" class="h-screen relative flex items-end pb-24 px-10">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1920" class="absolute inset-0 w-full h-full object-cover" alt="Hero">
-        <div class="absolute inset-0 hero-gradient"></div>
-        <div class="relative z-10 text-white max-w-5xl">
+    <section id="lage" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Perfekt Angebunden (通勤时间表)</h2>
+            <div class="overflow-x-auto shadow-lg rounded-lg">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-800 text-white">
+                            <th class="py-4 px-6 font-semibold text-sm uppercase">Ziel (目的地)</th>
+                            <th class="py-4 px-6 font-semibold text-sm uppercase">Verkehrsmittel (交通方式)</th>
+                            <th class="py-4 px-6 font-semibold text-sm uppercase">Fahrzeit (通勤时间)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6">U-Bahn Station (Am Hart)</td>
+                            <td class="py-4 px-6 text-blue-600">🚶 Zu Fuß (步行)</td>
+                            <td class="py-4 px-6 font-bold">5 Min.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6">München Marienplatz (市中心)</td>
+                            <td class="py-4 px-6 text-blue-600">🚇 U-Bahn (地铁 U2)</td>
+                            <td class="py-4 px-6 font-bold">12 Min.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6">Olympiapark (奥林匹克公园)</td>
+                            <td class="py-4 px-6 text-blue-600">🚲 Fahrrad (自行车)</td>
+                            <td class="py-4 px-6 font-bold">10 Min.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6">Flughafen München (慕尼黑机场)</td>
+                            <td class="py-4 px-6 text-blue-600">🚗 Auto (自驾)</td>
+                            <td class="py-4 px-6 font-bold">25 Min.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="ausstattung" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">Ausstattung & Nachhaltigkeit (建材与能源标准)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🪵</div>
+                    <h3 class="text-xl font-bold mb-4">Hochwertige Materialien</h3>
+                    <p class="text-gray-600">Echtholzparkett (Eiche), großformatige Feinsteinzeugfliesen und formschöne Sanitäranlagen von Markenherstellern für ein luxuriöses Wohngefühl.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🍃</div>
+                    <h3 class="text-xl font-bold mb-4">KfW-Effizienzhaus 55</h3>
+                    <p class="text-gray-600">Nachhaltige Bauweise mit Fernwärmeanschluss und dezentraler Wohnraumlüftung mit Wärmerückgewinnung. Das schont die Umwelt und Ihren Geldbeutel.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">☀️</div>
+                    <h3 class="text-xl font-bold mb-4">Höchster Wohnkomfort</h3>
+                    <p class="text-gray-600">Fußbodenheizung mit Einzelraumregelung, elektrische Rollläden, dreifach verglaste Fenster und Video-Gegensprechanlage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wohnungen" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Wohnungsangebot (单元列表)</h2>
+            <div class="overflow-x-auto shadow-md rounded-lg border border-gray-200">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="py-4 px-6 font-semibold">Whg.-Nr.</th>
+                            <th class="py-4 px-6 font-semibold">Etage (楼层)</th>
+                            <th class="py-4 px-6 font-semibold">Zimmer (户型)</th>
+                            <th class="py-4 px-6 font-semibold">Wohnfläche (面积)</th>
+                            <th class="py-4 px-6 font-semibold">Kaufpreis (价格)</th>
+                            <th class="py-4 px-6 font-semibold">Status (状态)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-bold">1.01</td>
+                            <td class="py-4 px-6">EG (底层)</td>
+                            <td class="py-4 px-6">3 Zimmer</td>
+                            <td class="py-4 px-6">85 m²</td>
+                            <td class="py-4 px-6">850.000 €</td>
+                            <td class="py-4 px-6"><span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">Verfügbar (在售)</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-bold">1.02</td>
+                            <td class="py-4 px-6">EG (底层)</td>
+                            <td class="py-4 px-6">2 Zimmer</td>
+                            <td class="py-4 px-6">60 m²</td>
+                            <td class="py-4 px-6">620.000 €</td>
+                            <td class="py-4 px-6"><span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full">Reserviert (已预留)</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-bold">2.01</td>
+                            <td class="py-4 px-6">1. OG (二楼)</td>
+                            <td class="py-4 px-6">4 Zimmer</td>
+                            <td class="py-4 px-6">110 m²</td>
+                            <td class="py-4 px-6">1.150.000 €</td>
+                            <td class="py-4 px-6"><span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">Verfügbar (在售)</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 opacity-60">
+                            <td class="py-4 px-6 font-bold">3.01</td>
+                            <td class="py-4 px-6">Penthouse (顶层)</td>
+                            <td class="py-4 px-6">4 Zimmer</td>
+                            <td class="py-4 px-6">145 m²</td>
+                            <td class="py-4 px-6">-</td>
+                            <td class="py-4 px-6"><span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full">Verkauft (已售)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Interesse geweckt? (联系表单)</h2>
+            <p class="text-center text-gray-400 mb-10">Vereinbaren Sie noch heute einen Beratungstermin mit unseren Immobilienexperten.</p>
+            
+            <form class="space-y-6 bg-gray-800 p-8 rounded-lg shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="vorname">Vorname (名字)</label>
+                        <input type="text" id="vorname" class="w-full px-4 py-3 rounded-md bg-gray-700 border-transparent focus:border-blue-500 focus:bg-gray-600 focus:ring-0 text-white" placeholder="Max">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="nachname">Nachname (姓氏)</label>
+                        <input type="text" id="nachname" class="w-full px-4 py-3 rounded-md bg-gray-700 border-transparent focus:border-blue-500 focus:bg-gray-600 focus:ring-0 text-white" placeholder="Mustermann">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="email">E-Mail Adresse (邮箱)</label>
+                    <input type="email" id="email" class="w-full px-4 py-3 rounded-md bg-gray-700 border-transparent focus:border-blue-500 focus:bg-gray-600 focus:ring-0 text-white" placeholder="max@beispiel.de">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="telefon">Telefonnummer (电话)</label>
+                    <input type="tel" id="telefon" class="w-full px-4 py-3 rounded-md bg-gray-700 border-transparent focus:border-blue-500 focus:bg-gray-600 focus:ring-0 text-white" placeholder="+49 123 456789">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="nachricht">Ihre Nachricht (您的留言)</label>
+                    <textarea id="nachricht" rows="4" class="w-full px-4 py-3 rounded-md bg-gray-700 border-transparent focus:border-blue-500 focus:bg-gray-600 focus:ring-0 text-white" placeholder="Ich interessiere mich für die Wohnung 2.01..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-md transition duration-300">
+                    Anfrage Senden (发送请求)
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-black py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Lindenpark Residenz. Alle Rechte vorbehalten. | Impressum | Datenschutz</p>
+    </footer>
+
+</body>
+</html>
