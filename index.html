@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WOHNEN AM ENGLISCHEN GARTEN - Neubau von Studentenapartments in München Schwabing/Freimann. Die ideale Kapitalanlage mit KNN-Förderung.">
+    <meta name="keywords" content="Studentenapartments München, Immobilieninvestment, Wohnungen Schwabing, Kapitalanlage, Neubau">
     <title>WOHNEN AM ENGLISCHEN GARTEN | Studentenapartments München</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -16,229 +20,665 @@
                     },
                     colors: {
                         primary: '#1E3A8A', 
-                        secondary: '#D97706', 
+                        secondary: '#D97706',
+                        accent: '#10B981',
+                        dark: '#0F172A',
                     }
                 }
             }
         }
     </script>
+    
     <style>
         html { scroll-behavior: smooth; }
+        
+        /* Hero Background with Parallax Effect */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%), 
+                              url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+            position: relative;
         }
-        /* 确保嵌入的表单能够自适应宽度 */
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+        
+        /* Glass Morphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Card Hover Effects */
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card:hover .icon-circle {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .icon-circle {
+            transition: all 0.3s ease;
+        }
+        
+        /* Button Animations */
+        .btn-primary {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        /* Navigation */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #D97706, #10B981);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Table Styles */
+        .apartment-table tr {
+            transition: all 0.2s ease;
+        }
+        
+        .apartment-table tbody tr:hover {
+            background: linear-gradient(90deg, rgba(30, 58, 138, 0.05), rgba(217, 119, 6, 0.05));
+            transform: scale(1.01);
+        }
+        
+        .apartment-table thead th {
+            background: linear-gradient(135deg, #1E3A8A, #2563EB);
+        }
+        
+        /* Form Container */
         #crm-form-container iframe {
             width: 100% !important;
             border: none;
+            border-radius: 8px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Scroll Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #1E3A8A, #D97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #1E3A8A, #D97706, #10B981, transparent);
         }
     </style>
 </head>
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
 
-    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full z-50 top-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center h-20">
-                <a href="#" class="text-2xl font-bold text-primary tracking-widest">WOHNEN AM ENGLISCHEN GARTEN</a>
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-xl md:text-2xl font-bold gradient-text tracking-widest hover:opacity-80 transition">
+                    WOHNEN AM ENGLISCHEN GARTEN
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#overview" class="nav-link text-gray-700 hover:text-primary font-medium transition">Übersicht</a>
+                    <a href="#description" class="nav-link text-gray-700 hover:text-primary font-medium transition">Projekt</a>
+                    <a href="#apartments" class="nav-link text-gray-700 hover:text-primary font-medium transition">Wohnungen</a>
+                    <a href="#location" class="nav-link text-gray-700 hover:text-primary font-medium transition">Lage</a>
+                    <a href="#contact" class="btn-primary bg-gradient-to-r from-secondary to-yellow-600 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg transition">
+                        <i class="fa-solid fa-envelope mr-2"></i>Kontakt
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-primary transition">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-20 left-0 w-64 h-screen bg-white shadow-xl z-40">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#overview" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Übersicht</a>
+                <a href="#description" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Projekt</a>
+                <a href="#apartments" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Wohnungen</a>
+                <a href="#location" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Lage</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2">Kontakt</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg h-screen flex items-center justify-center text-center mt-10">
-        <div class="px-4">
-            <p class="text-white text-lg md:text-xl mb-4 font-light tracking-widest uppercase">München Schwabing / Freimann</p>
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">WOHNEN AM ENGLISCHEN GARTEN</h1>
-            <p class="text-white text-lg md:text-2xl mb-10 font-light">Neubau von Studentenapartments – Die ideale Kapitalanlage.</p>
-            <a href="#apartments" class="bg-secondary text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-yellow-600 transition shadow-lg">
-                Verfügbare Wohnungen ansehen
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center relative">
+        <div class="relative z-10 px-4 max-w-5xl">
+            <p class="text-white/90 text-lg md:text-xl mb-6 font-light tracking-[0.2em] uppercase fade-in-up">
+                <i class="fa-solid fa-location-dot mr-2 text-secondary"></i>München Schwabing / Freimann
+            </p>
+            <h1 class="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight fade-in-up" style="animation-delay: 0.2s;">
+                WOHNEN AM<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-400">ENGLISCHEN GARTEN</span>
+            </h1>
+            <p class="text-white/90 text-lg md:text-2xl mb-12 font-light max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.4s;">
+                Neubau von Studentenapartments – Die ideale Kapitalanlage.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up" style="animation-delay: 0.6s;">
+                <a href="#apartments" class="btn-primary bg-gradient-to-r from-secondary to-yellow-600 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-home mr-2"></i>Verfügbare Wohnungen
+                </a>
+                <a href="https://media.visonation.com/better-real-estate/grasmeierstr/exterior/exterior-navigator" target="_blank" class="btn-primary bg-white/20 backdrop-blur-md border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white/30 transform hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-vr-cardboard mr-2"></i>360° Tour
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#overview" class="text-white/70 hover:text-white transition">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
             </a>
         </div>
     </header>
 
-    <section id="overview" class="pt-16 pb-10 bg-white">
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white relative">
+        <div class="section-divider mb-20"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
-                <div>
-                    <i class="fa-solid fa-door-open text-3xl text-primary mb-3"></i>
-                    <h3 class="text-gray-500 text-sm">ZIMMER</h3>
-                    <p class="font-bold text-lg">1 Zimmer (Apartments)</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Projektübersicht</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Alles Wichtige auf einen Blick</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 text-center group">
+                    <div class="icon-circle w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <i class="fa-solid fa-door-open text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Zimmer</h3>
+                    <p class="font-bold text-lg text-gray-800">1 Zimmer</p>
+                    <p class="text-sm text-gray-500">Apartments</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-ruler-combined text-3xl text-primary mb-3"></i>
-                    <h3 class="text-gray-500 text-sm">WOHNFLÄCHE</h3>
-                    <p class="font-bold text-lg">ca. 19 - 31 m²</p>
+                
+                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 text-center group">
+                    <div class="icon-circle w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <i class="fa-solid fa-ruler-combined text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Wohnfläche</h3>
+                    <p class="font-bold text-lg text-gray-800">19 - 31 m²</p>
+                    <p class="text-sm text-gray-500">Flexibel</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-building text-3xl text-primary mb-3"></i>
-                    <h3 class="text-gray-500 text-sm">OBJEKTTYP</h3>
-                    <p class="font-bold text-lg">Neubau</p>
+                
+                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 text-center group">
+                    <div class="icon-circle w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-secondary to-yellow-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <i class="fa-solid fa-building text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Objekttyp</h3>
+                    <p class="font-bold text-lg text-gray-800">Neubau</p>
+                    <p class="text-sm text-gray-500">Premium</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-piggy-bank text-3xl text-primary mb-3"></i>
-                    <h3 class="text-gray-500 text-sm">FÖRDERUNG</h3>
-                    <p class="font-bold text-lg">KNN-Förderung</p>
+                
+                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 text-center group">
+                    <div class="icon-circle w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-accent to-green-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <i class="fa-solid fa-piggy-bank text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Förderung</h3>
+                    <p class="font-bold text-lg text-gray-800">KNN</p>
+                    <p class="text-sm text-gray-500">0,84 %</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-tag text-3xl text-primary mb-3"></i>
-                    <h3 class="text-gray-500 text-sm">KAUFPREIS</h3>
-                    <p class="font-bold text-lg">Auf Anfrage</p>
+                
+                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 text-center group">
+                    <div class="icon-circle w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <i class="fa-solid fa-tag text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Kaufpreis</h3>
+                    <p class="font-bold text-lg text-gray-800">Auf Anfrage</p>
+                    <p class="text-sm text-gray-500">Attraktiv</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-calendar-check text-3xl text-primary mb-3"></i>
-                    <h3 class="text-gray-500 text-sm">FERTIGSTELLUNG</h3>
-                    <p class="font-bold text-lg">Geplant 2027</p>
+                
+                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 text-center group">
+                    <div class="icon-circle w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-secondary to-yellow-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <i class="fa-solid fa-calendar-check text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Fertigstellung</h3>
+                    <p class="font-bold text-lg text-gray-800">2027</p>
+                    <p class="text-sm text-gray-500">Geplant</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pb-16 bg-white text-center">
-        <a href="https://media.visonation.com/better-real-estate/grasmeierstr/exterior/exterior-navigator" target="_blank" class="inline-block bg-primary text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-blue-800 transition transform hover:scale-105">
-            <i class="fa-solid fa-vr-cardboard mr-2"></i> 360° virtuellen Rundgang starten
-        </a>
+    <!-- Virtual Tour Section -->
+    <section class="py-16 bg-gradient-to-r from-primary via-blue-700 to-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Erleben Sie Ihr Zukünftiges Zuhause</h2>
+            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                Starten Sie eine immersive 360°-Tour durch das Projekt und erkunden Sie jeden Winkel.
+            </p>
+            <a href="https://media.visonation.com/better-real-estate/grasmeierstr/exterior/exterior-navigator" target="_blank" class="inline-flex items-center btn-primary bg-white text-primary px-12 py-5 rounded-full text-xl font-bold shadow-2xl hover:shadow-3xl hover:bg-gray-50 transition duration-300 transform hover:scale-105">
+                <i class="fa-solid fa-vr-cardboard mr-3 text-2xl pulse-animation"></i>
+                360° Virtuellen Rundgang
+            </a>
+        </div>
     </section>
 
-    <section id="description" class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Über das Projekt</h2>
-            <div class="text-gray-600 text-lg leading-relaxed space-y-6">
-                <p>
-                    Jedes Apartment in der Grasmeierstraße 8 wurde mit höchster Präzision und Liebe zum Detail gestaltet. Die Einheiten bieten einen kombinierten Wohn- und Schlafbereich mit moderner Kochzeile sowie ein eigenes Badezimmer mit bodentiefer Dusche. Große bodentiefe Fenster sorgen für lichtdurchflutete Räume und ein sehr angenehmes Wohngefühl.
-                </p>
-                <p>
-                    Die Immobilie genießt eine friedliche Umgebung und zeichnet sich durch ihre hervorragende Verkehrsanbindung aus. Die nächstgelegene U-Bahn-Station (Freimann) ist nur eine Minute zu Fuß entfernt. Der Englische Garten ist bequem fußläufig erreichbar, was eine perfekte Balance zwischen städtischem Leben und Natur bietet.
-                </p>
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mt-8 flex items-start gap-4 text-left">
-                    <i class="fa-solid fa-leaf text-3xl text-green-500 mt-1"></i>
-                    <div>
-                        <h4 class="font-bold text-gray-900 mb-2">Nachhaltigkeit & Investment-Highlights</h4>
-                        <p class="text-sm">
-                            <strong>KfW 55 Standard:</strong> Effiziente Fußbodenheizung schont die Umwelt und bedeutet langfristige Energieeinsparungen.<br>
-                            <strong>Möbliert:</strong> Alle Apartments werden vollständig möbliert übergeben – ideal für die direkte Vermietung.<br>
-                            <strong>Förderung:</strong> Profitieren Sie von der attraktiven KNN-Förderung (100.000 € zu 0,84 %).
-                        </p>
+    <!-- Description Section -->
+    <section id="description" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Über das Projekt</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-secondary to-yellow-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-star text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-xl mb-2">Premium-Qualität</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Jedes Apartment in der Grasmeierstraße 8 wurde mit höchster Präzision und Liebe zum Detail gestaltet. Die Einheiten bieten einen kombinierten Wohn- und Schlafbereich mit moderner Kochzeile sowie ein eigenes Badezimmer mit bodentiefer Dusche. Große bodentiefe Fenster sorgen für lichtdurchflutete Räume und ein sehr angenehmes Wohngefühl.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-secondary to-yellow-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-map-location-dot text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-xl mb-2">Perfekte Lage</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Die Immobilie genießt eine friedliche Umgebung und zeichnet sich durch ihre hervorragende Verkehrsanbindung aus. Die nächstgelegene U-Bahn-Station (Freimann) ist nur eine Minute zu Fuß entfernt. Der Englische Garten ist bequem fußläufig erreichbar, was eine perfekte Balance zwischen städtischem Leben und Natur bietet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-white to-primary/5 p-10 rounded-3xl shadow-xl border border-primary/10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+                        <i class="fa-solid fa-leaf text-accent text-3xl mr-4"></i>
+                        Nachhaltigkeit & Investment-Highlights
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-leaf text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">KfW 55 Standard</h4>
+                                <p class="text-gray-600 text-sm">Effiziente Fußbodenheizung schont die Umwelt und bedeutet langfristige Energieeinsparungen.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-couch text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Vollständig Möbliert</h4>
+                                <p class="text-gray-600 text-sm">Alle Apartments werden vollständig möbliert übergeben – ideal für die direkte Vermietung.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-hand-holding-dollar text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Attraktive Förderung</h4>
+                                <p class="text-gray-600 text-sm">Profitieren Sie von der attraktiven KNN-Förderung (100.000 € zu 0,84 %).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1">Ihr Vorteil</p>
+                                <p class="text-3xl font-bold gradient-text">100.000 €</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600 mb-1">Zinssatz</p>
+                                <p class="text-3xl font-bold text-secondary">0,84 %</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="apartments" class="py-20 bg-white">
+    <!-- Apartments Section -->
+    <section id="apartments" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Grundrisse und Preise</h2>
-            
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">Wohnung</th>
-                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">Etage</th>
-                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">Zimmer</th>
-                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">Wohnfläche</th>
-                            <th class="py-4 px-6 text-left text-sm font-semibold text-gray-600">Kaufpreis</th>
-                            <th class="py-4 px-6 text-center text-sm font-semibold text-gray-600">Grundriss</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr class="hover:bg-gray-50 transition">
-                            <td class="py-4 px-6 font-medium text-gray-900">Apt. 01</td>
-                            <td class="py-4 px-6 text-gray-600">EG</td>
-                            <td class="py-4 px-6 text-gray-600">1</td>
-                            <td class="py-4 px-6 text-gray-600">ca. 19 m²</td>
-                            <td class="py-4 px-6 font-bold text-primary">Auf Anfrage</td>
-                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 transition">
-                            <td class="py-4 px-6 font-medium text-gray-900">Apt. 05</td>
-                            <td class="py-4 px-6 text-gray-600">1. OG</td>
-                            <td class="py-4 px-6 text-gray-600">1</td>
-                            <td class="py-4 px-6 text-gray-600">ca. 22 m²</td>
-                            <td class="py-4 px-6 font-bold text-primary">Auf Anfrage</td>
-                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 transition">
-                            <td class="py-4 px-6 font-medium text-gray-900">Apt. 12</td>
-                            <td class="py-4 px-6 text-gray-600">2. OG</td>
-                            <td class="py-4 px-6 text-gray-600">1</td>
-                            <td class="py-4 px-6 text-gray-600">ca. 25 m²</td>
-                            <td class="py-4 px-6 font-bold text-primary">Auf Anfrage</td>
-                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 transition">
-                            <td class="py-4 px-6 font-medium text-gray-900">Apt. 18</td>
-                            <td class="py-4 px-6 text-gray-600">3. OG</td>
-                            <td class="py-4 px-6 text-gray-600">1</td>
-                            <td class="py-4 px-6 text-gray-600">ca. 28 m²</td>
-                            <td class="py-4 px-6 font-bold text-primary">Auf Anfrage</td>
-                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 transition">
-                            <td class="py-4 px-6 font-medium text-gray-900">Apt. 24</td>
-                            <td class="py-4 px-6 text-gray-600">DG</td>
-                            <td class="py-4 px-6 text-gray-600">1</td>
-                            <td class="py-4 px-6 text-gray-600">ca. 31 m²</td>
-                            <td class="py-4 px-6 font-bold text-primary">Auf Anfrage</td>
-                            <td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-file-pdf text-xl"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Grundrisse und Preise</h2>
+                <p class="text-gray-600 text-lg">Wählen Sie Ihr perfektes Apartment</p>
             </div>
-            <p class="text-sm text-gray-500 mt-4 text-center">Änderungen und Zwischenverkauf vorbehalten. Mit unserem Planungsteam können wir auch Ihre individuellen Grundrisse verwirklichen.</p>
+            
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full apartment-table">
+                        <thead>
+                            <tr>
+                                <th class="py-6 px-6 text-left text-sm font-bold text-white uppercase tracking-wider">Wohnung</th>
+                                <th class="py-6 px-6 text-left text-sm font-bold text-white uppercase tracking-wider">Etage</th>
+                                <th class="py-6 px-6 text-left text-sm font-bold text-white uppercase tracking-wider">Zimmer</th>
+                                <th class="py-6 px-6 text-left text-sm font-bold text-white uppercase tracking-wider">Wohnfläche</th>
+                                <th class="py-6 px-6 text-left text-sm font-bold text-white uppercase tracking-wider">Kaufpreis</th>
+                                <th class="py-6 px-6 text-center text-sm font-bold text-white uppercase tracking-wider">Grundriss</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-white font-bold">01</span>
+                                        </div>
+                                        <span class="font-semibold text-gray-900">Apartment 01</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6 text-gray-600">Erdgeschoss</td>
+                                <td class="py-6 px-6 text-gray-600">1</td>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-ruler-combined text-secondary mr-2"></i>
+                                        <span class="font-semibold text-gray-800">19 m²</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6">
+                                    <span class="inline-block bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">Auf Anfrage</span>
+                                </td>
+                                <td class="py-6 px-6 text-center">
+                                    <a href="#" class="text-red-500 hover:text-red-700 hover:scale-110 transition transform inline-block">
+                                        <i class="fa-solid fa-file-pdf text-2xl"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-secondary to-yellow-600 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-white font-bold">05</span>
+                                        </div>
+                                        <span class="font-semibold text-gray-900">Apartment 05</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6 text-gray-600">1. Obergeschoss</td>
+                                <td class="py-6 px-6 text-gray-600">1</td>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-ruler-combined text-secondary mr-2"></i>
+                                        <span class="font-semibold text-gray-800">22 m²</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6">
+                                    <span class="inline-block bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">Auf Anfrage</span>
+                                </td>
+                                <td class="py-6 px-6 text-center">
+                                    <a href="#" class="text-red-500 hover:text-red-700 hover:scale-110 transition transform inline-block">
+                                        <i class="fa-solid fa-file-pdf text-2xl"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-accent to-green-600 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-white font-bold">12</span>
+                                        </div>
+                                        <span class="font-semibold text-gray-900">Apartment 12</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6 text-gray-600">2. Obergeschoss</td>
+                                <td class="py-6 px-6 text-gray-600">1</td>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-ruler-combined text-secondary mr-2"></i>
+                                        <span class="font-semibold text-gray-800">25 m²</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6">
+                                    <span class="inline-block bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">Auf Anfrage</span>
+                                </td>
+                                <td class="py-6 px-6 text-center">
+                                    <a href="#" class="text-red-500 hover:text-red-700 hover:scale-110 transition transform inline-block">
+                                        <i class="fa-solid fa-file-pdf text-2xl"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-white font-bold">18</span>
+                                        </div>
+                                        <span class="font-semibold text-gray-900">Apartment 18</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6 text-gray-600">3. Obergeschoss</td>
+                                <td class="py-6 px-6 text-gray-600">1</td>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-ruler-combined text-secondary mr-2"></i>
+                                        <span class="font-semibold text-gray-800">28 m²</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6">
+                                    <span class="inline-block bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">Auf Anfrage</span>
+                                </td>
+                                <td class="py-6 px-6 text-center">
+                                    <a href="#" class="text-red-500 hover:text-red-700 hover:scale-110 transition transform inline-block">
+                                        <i class="fa-solid fa-file-pdf text-2xl"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-secondary to-yellow-600 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-white font-bold">24</span>
+                                        </div>
+                                        <span class="font-semibold text-gray-900">Apartment 24</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6 text-gray-600">Dachgeschoss</td>
+                                <td class="py-6 px-6 text-gray-600">1</td>
+                                <td class="py-6 px-6">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-ruler-combined text-secondary mr-2"></i>
+                                        <span class="font-semibold text-gray-800">31 m²</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-6">
+                                    <span class="inline-block bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">Auf Anfrage</span>
+                                </td>
+                                <td class="py-6 px-6 text-center">
+                                    <a href="#" class="text-red-500 hover:text-red-700 hover:scale-110 transition transform inline-block">
+                                        <i class="fa-solid fa-file-pdf text-2xl"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <p class="text-sm text-gray-500 mt-6 text-center bg-gray-50 py-4 rounded-xl">
+                <i class="fa-solid fa-info-circle text-secondary mr-2"></i>
+                Änderungen und Zwischenverkauf vorbehalten. Mit unserem Planungsteam können wir auch Ihre individuellen Grundrisse verwirklichen.
+            </p>
         </div>
     </section>
 
-    <section id="location" class="py-16 bg-gray-50">
+    <!-- Location Section -->
+    <section id="location" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Adresse</h2>
-            <p class="text-center text-gray-600 mb-10"><i class="fa-solid fa-location-dot text-primary mr-2"></i>Grasmeierstraße 8, Schwabing, 80805 München</p>
-            
-            <div class="w-full h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg border border-gray-200">
-                <iframe 
-                    src="http://googleusercontent.com/maps.google.com/3" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Standort</h2>
+                <p class="text-gray-600 text-lg">Mitten im Herzen von München</p>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row border border-gray-100">
+            
+            <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="flex items-center bg-gradient-to-r from-primary/10 to-secondary/10 px-6 py-4 rounded-2xl">
+                        <i class="fa-solid fa-location-dot text-secondary text-3xl mr-4"></i>
+                        <div>
+                            <p class="text-sm text-gray-500">Adresse</p>
+                            <p class="text-xl font-bold text-gray-900">Grasmeierstraße 8, Schwabing, 80805 München</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="md:w-1/2 p-6 md:p-10" id="crm-form-container">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Wohnung anfragen</h2>
+                <div class="w-full h-[500px] rounded-2xl overflow-hidden shadow-xl border-2 border-gray-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.1234567890123!2d11.5585!3d48.1805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDEwJzUzLjgiTiAxMcKwMzMnMzAuNiJF!5e0!3m2!1sde!2sde!4v1234567890123" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 16px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-gray-50 to-primary/5 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+                
+                <div class="md:w-1/2 p-10 md:p-12" id="crm-form-container">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fa-solid fa-paper-plane text-secondary text-2xl mr-3"></i>
+                        Wohnung anfragen
+                    </h2>
+                    <p class="text-gray-600 mb-8">Füllen Sie das Formular aus und wir melden uns schnellstmöglich bei Ihnen.</p>
                     <script type="text/javascript" src="https://propform.io/form/js/ns7rumG8yO2r"></script>
                 </div>
 
-                <div class="md:w-1/2 bg-primary text-white p-10 flex flex-col justify-center">
-                    <h3 class="text-xl font-bold mb-6">Persönlichen Beratungstermin vereinbaren</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-phone text-2xl mr-4 text-secondary"></i>
+                <div class="md:w-1/2 bg-gradient-to-br from-primary via-blue-800 to-blue-900 text-white p-10 md:p-12 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-8">Persönlichen Beratungstermin vereinbaren</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-start group">
+                            <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fa-solid fa-phone text-3xl text-secondary"></i>
+                            </div>
                             <div>
-                                <p class="text-sm text-gray-300">Per Telefon:</p>
-                                <p class="text-lg font-bold">+49 (89) 1250 9038</p>
+                                <p class="text-sm text-white/70 mb-1">Per Telefon</p>
+                                <p class="text-2xl font-bold hover:text-secondary transition cursor-pointer">+49 (89) 1250 9038</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-envelope text-2xl mr-4 text-secondary"></i>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fa-solid fa-envelope text-3xl text-secondary"></i>
+                            </div>
                             <div>
-                                <p class="text-sm text-gray-300">Per E-Mail:</p>
-                                <p class="text-lg font-bold">info@harvest-immobilien.com</p>
+                                <p class="text-sm text-white/70 mb-1">Per E-Mail</p>
+                                <p class="text-2xl font-bold hover:text-secondary transition cursor-pointer">info@harvest-immobilien.com</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-building text-2xl mr-4 text-secondary"></i>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fa-solid fa-building text-3xl text-secondary"></i>
+                            </div>
                             <div>
-                                <p class="text-sm text-gray-300">Kontakt:</p>
-                                <p class="text-base">Harvest Immobilien GmbH<br>Hartmannstraße 1<br>80333 München</p>
+                                <p class="text-sm text-white/70 mb-1">Kontakt</p>
+                                <p class="text-lg font-semibold">Harvest Immobilien GmbH</p>
+                                <p class="text-white/90">Hartmannstraße 1</p>
+                                <p class="text-white/90">80333 München</p>
                             </div>
                         </div>
                     </div>
@@ -247,22 +687,119 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Harvest Immobilien</h4>
-                <p>Wir bauen Werte. Eigentumswohnungen perfekt auf Sie zugeschnitten.</p>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-white text-2xl font-bold mb-6">Harvest Immobilien</h4>
+                    <p class="text-lg leading-relaxed text-gray-300">Wir bauen Werte. Eigentumswohnungen perfekt auf Sie zugeschnitten.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fa-brands fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fa-brands fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fa-brands fa-linkedin-in text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Schnellzugriff</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#overview" class="hover:text-white transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-secondary"></i>Übersicht</a></li>
+                        <li><a href="#description" class="hover:text-white transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-secondary"></i>Projekt</a></li>
+                        <li><a href="#apartments" class="hover:text-white transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-secondary"></i>Wohnungen</a></li>
+                        <li><a href="#contact" class="hover:text-white transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-secondary"></i>Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Rechtliches</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://www.harvest-immobilien.net/impressum" class="hover:text-white transition flex items-center"><i class="fa-solid fa-gavel text-xs mr-2 text-secondary"></i>Impressum</a></li>
+                        <li><a href="https://www.harvest-immobilien.net/datenschutz" class="hover:text-white transition flex items-center"><i class="fa-solid fa-shield text-xs mr-2 text-secondary"></i>Datenschutz</a></li>
+                        <li><a href="https://www.harvest-immobilien.net/agb" class="hover:text-white transition flex items-center"><i class="fa-solid fa-file-contract text-xs mr-2 text-secondary"></i>AGB</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Rechtliches</h4>
-                <ul class="space-y-2 flex flex-col md:flex-row gap-4 md:space-y-0">
-                    <li><a href="https://www.harvest-immobilien.net/impressum" class="hover:text-white transition">Impressum</a></li>
-                    <li><a href="https://www.harvest-immobilien.net/datenschutz" class="hover:text-white transition">Datenschutz</a></li>
-                    <li><a href="https://www.harvest-immobilien.net/agb" class="hover:text-white transition">AGB</a></li>
-                </ul>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2024 Harvest Immobilien GmbH. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-xl');
+                navbar.classList.add('shadow-md');
+            }
+        });
+    </script>
 
 </body>
 </html>
