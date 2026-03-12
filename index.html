@@ -3,47 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINDENPARK | Exklusives Wohnen in München-Milbertshofen</title>
+    <title>LINDENPARK | Exklusives Wohnen in München</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Noto Serif Display', serif; }
         .sticky-nav { backdrop-filter: blur(12px); background: rgba(255,255,255,0.85); }
+        .hero-gradient { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); }
     </style>
 </head>
-<body class="bg-white text-zinc-900 text-[15px] leading-relaxed">
+<body class="bg-white text-zinc-900 overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 py-5 px-10 flex justify-between items-center sticky-nav border-b border-zinc-100">
-        <div class="text-xl tracking-[0.3em] font-light">LINDEN<span class="font-bold">PARK</span></div>
-        <div class="hidden lg:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500">
-            <a href="#projektdetails" class="hover:text-black transition">Das Projekt</a>
+    <nav class="fixed w-full z-50 py-4 px-8 flex justify-between items-center sticky-nav border-b border-zinc-100">
+        <div class="text-xl tracking-[0.3em] font-light uppercase">Linden<span class="font-bold">park</span></div>
+        <div class="hidden lg:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400">
+            <a href="#hero" class="hover:text-black transition">Home</a>
             <a href="#lage" class="hover:text-black transition">Lage</a>
             <a href="#ausstattung" class="hover:text-black transition">Ausstattung</a>
-            <a href="#wohnungen" class="text-black border-b border-black pb-1">Wohnungen</a>
-            <a href="#kontakt" class="bg-zinc-900 text-white px-5 py-2 hover:bg-zinc-700 transition">Kontakt</a>
+            <a href="#wohnungen" class="hover:text-black transition text-zinc-900">Wohnungen (20)</a>
+            <a href="#kontakt" class="bg-zinc-900 text-white px-5 py-2 hover:bg-black transition">Anfragen</a>
         </div>
     </nav>
 
-    <section id="home" class="h-screen relative flex items-end pb-24 px-12 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1920" class="absolute inset-0 w-full h-full object-cover scale-105" alt="Projektansicht">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+    <section id="hero" class="h-screen relative flex items-end pb-24 px-10">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1920" class="absolute inset-0 w-full h-full object-cover" alt="Hero">
+        <div class="absolute inset-0 hero-gradient"></div>
         <div class="relative z-10 text-white max-w-5xl">
-            <h1 class="text-6xl md:text-8xl font-light mb-6 leading-none">Modernes Wohnen<br><strong>im Münchner Norden</strong></h1>
-            <p class="text-xl md:text-2xl font-light opacity-90 max-w-2xl italic">20 exklusive Wohneinheiten zwischen urbanem Leben und grüner Oase.</p>
-        </div>
-    </section>
-
-    <section id="lage" class="py-32 px-10 bg-[#fbfbf9]">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
-            <div>
-                <h2 class="text-5xl mb-10 leading-tight italic">Die Lage:<br>Urban & Bestens vernetzt</h2>
-                <p class="text-zinc-500 text-lg mb-12">Milbertshofen-Am Hart bietet die perfekte Symbiose aus erstklassiger Infrastruktur und unmittelbarer Nähe zum Olympiapark. Erleben Sie Lebensqualität auf höchstem Niveau.</p>
-                
-                <div class="grid grid-cols-1 gap-6 border-t border-zinc-200 pt-8">
-                    <div class="flex justify-between items-center">
-                        <span class="uppercase text-[11px] tracking-widest text-zinc-400">Öffentlicher Verkehr</span>
-                        <span class="font-semibold">U-Bahn U2 (4 Min. zu Fuß)</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="uppercase text-[11px] tracking
