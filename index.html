@@ -197,6 +197,62 @@
             background: linear-gradient(90deg, transparent, #A5B3A7, #7A8681, #6B7A71, transparent);
         }
         
+        /* Floor Navigation Styles */
+        .floor-nav-btn {
+            background: white;
+            border: 2px solid #D4DCD9;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            color: #6B7A71;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .floor-nav-btn:hover {
+            border-color: #A5B3A7;
+            color: #2C3E2F;
+            transform: translateY(-2px);
+        }
+        
+        .floor-nav-btn.active {
+            background: #A5B3A7;
+            border-color: #A5B3A7;
+            color: white;
+        }
+        
+        /* Floor Group Styles */
+        .floor-group {
+            margin-bottom: 0.5rem;
+        }
+        
+        .floor-header {
+            transition: all 0.3s ease;
+        }
+        
+        .floor-header:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .floor-content {
+            transition: max-height 0.5s ease-in-out;
+            overflow: hidden;
+        }
+        
+        .floor-content.expanded {
+            max-height: 1000px;
+        }
+        
+        .floor-content .apartment-table {
+            border: none;
+        }
+        
+        .floor-content .apartment-table thead th {
+            background: #F8F9F8;
+            border-bottom: 1px solid #D1D5D1;
+        }
+        
         /* Modal Styles */
         .modal {
             display: none;
@@ -584,57 +640,264 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold gradient-text mb-4">Grundrisse und Preise</h2>
-                <p class="text-gray-600 text-lg">Wählen Sie Ihr perfektes Apartment</p>
+                <p class="text-gray-600 text-lg">Wählen Sie Ihr perfektes Apartment nach Etagen</p>
             </div>
             
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead>
-                            <tr class="bg-primary-dark">
-                                <th class="py-5 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider">Wohnung</th>
-                                <th class="py-5 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider">Etage</th>
-                                <th class="py-5 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider">Zimmer</th>
-                                <th class="py-5 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider">Wohnfläche</th>
-                                <th class="py-5 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider">Kaufpreis</th>
-                                <th class="py-5 px-6 text-center text-sm font-semibold text-white uppercase tracking-wider">Grundriss</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">01</span></div><span class="font-medium text-gray-900">Appartment 1</span></div></td><td class="py-5 px-6 text-gray-600">EG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 23,67 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">372.462 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">02</span></div><span class="font-medium text-gray-900">Appartment 2</span></div></td><td class="py-5 px-6 text-gray-600">EG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 29,80 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">434.671 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">03</span></div><span class="font-medium text-gray-900">Appartment 3</span></div></td><td class="py-5 px-6 text-gray-600">EG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 26,74 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">418.577 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">04</span></div><span class="font-medium text-gray-900">Appartment 4</span></div></td><td class="py-5 px-6 text-gray-600">EG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 27,21 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">437.231 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">05</span></div><span class="font-medium text-gray-900">Appartment 5</span></div></td><td class="py-5 px-6 text-gray-600">EG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 20,16 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">319.830 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">06</span></div><span class="font-medium text-gray-900">Appartment 6</span></div></td><td class="py-5 px-6 text-gray-600">EG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 23,97 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">375.762 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">07</span></div><span class="font-medium text-gray-900">Appartment 7</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 23,73 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">389.973 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">08</span></div><span class="font-medium text-gray-900">Appartment 8</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 22,71 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">369.422 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">09</span></div><span class="font-medium text-gray-900">Appartment 9</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 22,71 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">376.235 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">10</span></div><span class="font-medium text-gray-900">Appartment 10</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 21,84 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">359.327 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">11</span></div><span class="font-medium text-gray-900">Appartment 11</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 20,76 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">346.473 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">12</span></div><span class="font-medium text-gray-900">Appartment 12</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 21,64 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">355.007 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">13</span></div><span class="font-medium text-gray-900">Appartment 13</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 21,63 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">340.791 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">14</span></div><span class="font-medium text-gray-900">Appartment 14</span></div></td><td class="py-5 px-6 text-gray-600">OG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 22,65 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">356.035 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">15</span></div><span class="font-medium text-gray-900">Appartment 15</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 21,69 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">359.040 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">16</span></div><span class="font-medium text-gray-900">Appartment 16</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 20,58 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">332.302 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">17</span></div><span class="font-medium text-gray-900">Appartment 17</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 20,57 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">338.320 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">18</span></div><span class="font-medium text-gray-900">Appartment 18</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 18,81 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">318.397 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">19</span></div><span class="font-medium text-gray-900">Appartment 19</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 18,82 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">311.781 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">20</span></div><span class="font-medium text-gray-900">Appartment 20</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 20,57 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">341.405 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">21</span></div><span class="font-medium text-gray-900">Appartment 21</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 20,58 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">337.447 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">22</span></div><span class="font-medium text-gray-900">Appartment 22</span></div></td><td class="py-5 px-6 text-gray-600">DG</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 21,69 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">352.533 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">23</span></div><span class="font-medium text-gray-900">Appartment 23</span></div></td><td class="py-5 px-6 text-gray-600">Spitzboden</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 18,84 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">318.877 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">24</span></div><span class="font-medium text-gray-900">Appartment 24</span></div></td><td class="py-5 px-6 text-gray-600">Spitzboden</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 19,52 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">329.753 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">25</span></div><span class="font-medium text-gray-900">Appartment 25</span></div></td><td class="py-5 px-6 text-gray-600">Spitzboden</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 18,89 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">319.676 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">26</span></div><span class="font-medium text-gray-900">Appartment 26</span></div></td><td class="py-5 px-6 text-gray-600">Spitzboden</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 19,56 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">330.393 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">27</span></div><span class="font-medium text-gray-900">Appartment 27</span></div></td><td class="py-5 px-6 text-gray-600">Spitzboden</td><td class="py-5 px-6 text-gray-600">1</td><td class="py-5 px-6 text-gray-600">ca. 18,86 m²</td><td class="py-5 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">311.652 €</span></td><td class="py-5 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
-                            <tr class="hover:bg-gray-50 transition-colors bg-gray-50"><td class="py-5 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mr-3"><i class="fa-solid fa-car text-white"></i></div><span class="font-medium text-gray-900">Stellplätze</span></div></td><td class="py-5 px-6 text-gray-600">-</td><td class="py-5 px-6 text-gray-600">-</td><td class="py-5 px-6 text-gray-600">-</td><td class="py-5 px-6"><span class="inline-block bg-secondary text-white px-4 py-1.5 rounded-full text-sm font-medium">39.500 €</span></td><td class="py-5 px-6 text-center">-</td></tr>
-                        </tbody>
-                    </table>
+            <!-- Floor Navigation -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="floor-nav-btn active" data-floor="all">Alle Etagen</button>
+                <button class="floor-nav-btn" data-floor="EG">Erdgeschoss (EG)</button>
+                <button class="floor-nav-btn" data-floor="OG">Obergeschoss (OG)</button>
+                <button class="floor-nav-btn" data-floor="DG">Dachgeschoss (DG)</button>
+                <button class="floor-nav-btn" data-floor="Spitzboden">Spitzboden</button>
+                <button class="floor-nav-btn" data-floor="5">Etage 5</button>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Floor Group: EG -->
+                <div class="floor-group" data-floor="EG">
+                    <div class="floor-header bg-gradient-to-r from-primary to-primary-dark text-white p-6 rounded-t-2xl cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-1 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Erdgeschoss (EG)</h3>
+                                    <p class="text-white/80">6 Apartments • 20,16 - 26,60 m² • 319.830 - 437.231 €</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">6 Apartments</span>
+                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-content bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-500 max-h-0">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full apartment-table">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnung</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Etage</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Zimmer</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnfläche</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Kaufpreis</th>
+                                        <th class="py-4 px-6 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Grundriss</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">01</span></div><span class="font-medium text-gray-900">Appartment 1</span></div></td><td class="py-4 px-6 text-gray-600">EG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 23,67 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">372.462 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">02</span></div><span class="font-medium text-gray-900">Appartment 2</span></div></td><td class="py-4 px-6 text-gray-600">EG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 29,80 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">434.671 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">03</span></div><span class="font-medium text-gray-900">Appartment 3</span></div></td><td class="py-4 px-6 text-gray-600">EG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 26,74 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">418.577 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">04</span></div><span class="font-medium text-gray-900">Appartment 4</span></div></td><td class="py-4 px-6 text-gray-600">EG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 27,21 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">437.231 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">05</span></div><span class="font-medium text-gray-900">Appartment 5</span></div></td><td class="py-4 px-6 text-gray-600">EG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 20,16 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">319.830 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">06</span></div><span class="font-medium text-gray-900">Appartment 6</span></div></td><td class="py-4 px-6 text-gray-600">EG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 23,97 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">375.762 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Group: OG -->
+                <div class="floor-group" data-floor="OG">
+                    <div class="floor-header bg-gradient-to-r from-secondary to-primary text-white p-6 rounded-t-2xl cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-2 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Obergeschoss (OG)</h3>
+                                    <p class="text-white/80">8 Apartments • 20,76 - 23,73 m² • 340.791 - 389.973 €</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">8 Apartments</span>
+                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-content bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-500 max-h-0">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full apartment-table">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnung</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Etage</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Zimmer</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnfläche</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Kaufpreis</th>
+                                        <th class="py-4 px-6 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Grundriss</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">07</span></div><span class="font-medium text-gray-900">Appartment 7</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 23,73 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">389.973 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">08</span></div><span class="font-medium text-gray-900">Appartment 8</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 22,71 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">369.422 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">09</span></div><span class="font-medium text-gray-900">Appartment 9</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 22,71 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">376.235 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">10</span></div><span class="font-medium text-gray-900">Appartment 10</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 21,84 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">359.327 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">11</span></div><span class="font-medium text-gray-900">Appartment 11</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 20,76 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">346.473 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">12</span></div><span class="font-medium text-gray-900">Appartment 12</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 21,64 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">355.007 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">13</span></div><span class="font-medium text-gray-900">Appartment 13</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 21,63 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">340.791 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">14</span></div><span class="font-medium text-gray-900">Appartment 14</span></div></td><td class="py-4 px-6 text-gray-600">OG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 22,65 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">356.035 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Group: DG -->
+                <div class="floor-group" data-floor="DG">
+                    <div class="floor-header bg-gradient-to-r from-primary-dark to-secondary text-white p-6 rounded-t-2xl cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-3 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Dachgeschoss (DG)</h3>
+                                    <p class="text-white/80">8 Apartments • 18,81 - 21,69 m² • 311.781 - 359.040 €</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">8 Apartments</span>
+                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-content bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-500 max-h-0">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full apartment-table">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnung</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Etage</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Zimmer</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnfläche</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Kaufpreis</th>
+                                        <th class="py-4 px-6 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Grundriss</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">15</span></div><span class="font-medium text-gray-900">Appartment 15</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 21,69 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">359.040 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">16</span></div><span class="font-medium text-gray-900">Appartment 16</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 20,58 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">332.302 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">17</span></div><span class="font-medium text-gray-900">Appartment 17</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 20,57 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">338.320 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">18</span></div><span class="font-medium text-gray-900">Appartment 18</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 18,81 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">318.397 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">19</span></div><span class="font-medium text-gray-900">Appartment 19</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 18,82 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">311.781 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">20</span></div><span class="font-medium text-gray-900">Appartment 20</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 20,57 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">341.405 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">21</span></div><span class="font-medium text-gray-900">Appartment 21</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 20,58 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">337.447 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">22</span></div><span class="font-medium text-gray-900">Appartment 22</span></div></td><td class="py-4 px-6 text-gray-600">DG</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 21,69 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">352.533 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Group: Spitzboden -->
+                <div class="floor-group" data-floor="Spitzboden">
+                    <div class="floor-header bg-gradient-to-r from-accent to-secondary text-white p-6 rounded-t-2xl cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-home text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Spitzboden</h3>
+                                    <p class="text-white/80">4 Apartments • 18,84 - 19,56 m² • 311.652 - 330.393 €</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">4 Apartments</span>
+                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-content bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-500 max-h-0">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full apartment-table">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnung</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Etage</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Zimmer</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnfläche</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Kaufpreis</th>
+                                        <th class="py-4 px-6 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Grundriss</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">23</span></div><span class="font-medium text-gray-900">Appartment 23</span></div></td><td class="py-4 px-6 text-gray-600">Spitzboden</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 18,84 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">318.877 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">24</span></div><span class="font-medium text-gray-900">Appartment 24</span></div></td><td class="py-4 px-6 text-gray-600">Spitzboden</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 19,52 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">329.753 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">25</span></div><span class="font-medium text-gray-900">Appartment 25</span></div></td><td class="py-4 px-6 text-gray-600">Spitzboden</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 18,89 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">319.676 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">26</span></div><span class="font-medium text-gray-900">Appartment 26</span></div></td><td class="py-4 px-6 text-gray-600">Spitzboden</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 19,56 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">330.393 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Group: 5 -->
+                <div class="floor-group" data-floor="5">
+                    <div class="floor-header bg-gradient-to-r from-gray-600 to-gray-800 text-white p-6 rounded-t-2xl cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-5 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Etage 5</h3>
+                                    <p class="text-white/80">1 Apartment • 18,86 m² • 311.652 €</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">1 Apartment</span>
+                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-content bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-500 max-h-0">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full apartment-table">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnung</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Etage</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Zimmer</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Wohnfläche</th>
+                                        <th class="py-4 px-6 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Kaufpreis</th>
+                                        <th class="py-4 px-6 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Grundriss</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50 transition-colors"><td class="py-4 px-6"><div class="flex items-center"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-sm">27</span></div><span class="font-medium text-gray-900">Appartment 27</span></div></td><td class="py-4 px-6 text-gray-600">5</td><td class="py-4 px-6 text-gray-600">1</td><td class="py-4 px-6 text-gray-600">ca. 18,86 m²</td><td class="py-4 px-6"><span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">311.652 €</span></td><td class="py-4 px-6 text-center"><a href="#" class="text-red-500 hover:text-red-600 transition inline-block"><i class="fa-solid fa-file-pdf text-xl"></i></a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parking -->
+                <div class="floor-group" data-floor="parking">
+                    <div class="floor-header bg-gradient-to-r from-gray-500 to-gray-700 text-white p-6 rounded-2xl cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-car text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Stellplätze</h3>
+                                    <p class="text-white/80">Verfügbare Parkplätze</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">39.500 €</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <p class="text-sm text-gray-500 mt-6 text-center bg-gray-50 py-4 rounded-xl px-6">
+            <p class="text-sm text-gray-500 mt-8 text-center bg-gray-50 py-4 rounded-xl px-6">
                 <i class="fa-solid fa-info-circle text-secondary mr-2"></i>
                 Wir weisen darauf hin, dass wir keine Haftung für die Richtigkeit und Vollständigkeit der gemachten Angaben übernehmen können, da diese auf den Angaben der Verkäufer beru-hen. Irrtum und Zwischenverkauf vorbehalten. Die dargestellten Wohnungsgrundrisse sind nicht maßstabsgetreu. Die abgebildeten Möblierungen dienen als Beispiele. Die Möblie-rung der Appartements erfolgt gemäß der Möblierungsbeschreibung.
             </p>
@@ -976,6 +1239,91 @@
             const modal = document.getElementById('tourModal');
             if (event.target === modal) {
                 closeTourModal();
+            }
+        });
+        
+        // Floor Navigation and Collapsible Sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Floor navigation buttons
+            const floorNavButtons = document.querySelectorAll('.floor-nav-btn');
+            const floorGroups = document.querySelectorAll('.floor-group');
+            
+            // Floor header click handlers
+            const floorHeaders = document.querySelectorAll('.floor-header');
+            
+            floorHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const floorGroup = this.parentElement;
+                    const content = floorGroup.querySelector('.floor-content');
+                    const chevron = this.querySelector('.fa-chevron-down');
+                    
+                    if (content) {
+                        // Toggle content visibility
+                        if (content.classList.contains('expanded')) {
+                            content.classList.remove('expanded');
+                            chevron.style.transform = 'rotate(0deg)';
+                        } else {
+                            content.classList.add('expanded');
+                            chevron.style.transform = 'rotate(180deg)';
+                        }
+                    }
+                });
+            });
+            
+            // Floor navigation button handlers
+            floorNavButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetFloor = this.getAttribute('data-floor');
+                    
+                    // Update active state
+                    floorNavButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Handle floor filtering
+                    if (targetFloor === 'all') {
+                        // Show all floors
+                        floorGroups.forEach(group => {
+                            group.style.display = 'block';
+                        });
+                    } else {
+                        // Show only selected floor
+                        floorGroups.forEach(group => {
+                            if (group.getAttribute('data-floor') === targetFloor) {
+                                group.style.display = 'block';
+                                // Expand the selected floor
+                                const content = group.querySelector('.floor-content');
+                                const chevron = group.querySelector('.fa-chevron-down');
+                                if (content && !content.classList.contains('expanded')) {
+                                    content.classList.add('expanded');
+                                    chevron.style.transform = 'rotate(180deg)';
+                                }
+                            } else {
+                                group.style.display = 'none';
+                            }
+                        });
+                    }
+                    
+                    // Scroll to apartments section if not already visible
+                    const apartmentsSection = document.getElementById('apartments');
+                    const rect = apartmentsSection.getBoundingClientRect();
+                    if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                        apartmentsSection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                });
+            });
+            
+            // Auto-expand first floor group on page load
+            const firstFloorGroup = document.querySelector('.floor-group');
+            if (firstFloorGroup) {
+                const firstContent = firstFloorGroup.querySelector('.floor-content');
+                const firstChevron = firstFloorGroup.querySelector('.fa-chevron-down');
+                if (firstContent) {
+                    firstContent.classList.add('expanded');
+                    firstChevron.style.transform = 'rotate(180deg)';
+                }
             }
         });
     </script>
