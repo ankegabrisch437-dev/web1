@@ -335,54 +335,97 @@
         <div class="section-divider mb-20"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold gradient-text mb-4">Die Highlights im Überblick</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Alles Wichtige auf einen Blick</p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Die Highlights im Überblick</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Ihre Vorteile als Investor auf einen Blick</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md border border-gray-100">
-                    <h3 class="font-bold text-xl text-gray-900 mb-4">Massivbauweise</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Werthaltige Ausführung mit wärmedämmendem Planziegelmauerwerk und „Weißer Wanne" im Untergeschoss.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Highlight 1: Massivbauweise -->
+                <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary/30">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-building text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4 group-hover:text-primary transition-colors">Massivbauweise</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Werthaltige Ausführung mit wärmedämmendem Planziegelmauerwerk und „Weißer Wanne" im Untergeschoss.
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md border border-gray-100">
-                    <h3 class="font-bold text-xl text-gray-900 mb-4">KfW-55 Effizienzhaus</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Die Möglichkeit auf ein KfW-Darlehen von bis zu 100.000 Euro zu attraktiven Konditionen.
-                    </p>
+                <!-- Highlight 2: KfW-55 -->
+                <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-secondary/30">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary to-accent"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-primary-dark rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4 group-hover:text-secondary transition-colors">KfW-55 Effizienzhaus</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Die Möglichkeit auf ein KfW-Darlehen von bis zu <span class="font-bold text-secondary">100.000 Euro</span> zu attraktiven Konditionen.
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md border border-gray-100">
-                    <h3 class="font-bold text-xl text-gray-900 mb-4">Steuerersparnis</h3>
-                    <p class="text-gray-600 leading-relaxed mb-3">
-                        Degressive Neubau-Afa von 5 % für attraktive Steuervorteile.
-                    </p>
-                    <a href="#" class="text-secondary hover:text-secondary/80 font-medium inline-flex items-center transition">
-                        Weitere Informationen <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                    </a>
+                <!-- Highlight 3: Steuerersparnis -->
+                <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-accent/30">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-accent to-yellow-500"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4 group-hover:text-accent transition-colors">Steuerersparnis</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Degressive Neubau-Afa von <span class="font-bold text-2xl text-accent">5%</span> für attraktive Steuervorteile.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-secondary hover:text-primary font-semibold transition-colors">
+                            Weitere Informationen <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md border border-gray-100">
-                    <h3 class="font-bold text-xl text-gray-900 mb-4">Rundum-Sorglos-Paket</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Für Kapitalanleger mit Erstvermietungsgarantie und Sondereigentumsverwaltung.
-                    </p>
+                <!-- Highlight 4: Rundum-Sorglos -->
+                <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary/30">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-blue-500"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-blue-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-hand-holding-heart text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4 group-hover:text-primary transition-colors">Rundum-Sorglos-Paket</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Für Kapitalanleger mit <span class="font-semibold">Erstvermietungsgarantie</span> und Sondereigentumsverwaltung.
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md border border-gray-100">
-                    <h3 class="font-bold text-xl text-gray-900 mb-4"> provisionsfrei </h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Für den Erwerber fallen keine Maklergebühren an.
-                    </p>
+                <!-- Highlight 5: Provisionsfrei -->
+                <div class="group relative bg-gradient-to-br from-secondary to-primary-dark rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden text-white">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-gift text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl mb-4">Provisionsfrei</h3>
+                        <p class="text-white/90 leading-relaxed text-lg">
+                            Für den Erwerber fallen <span class="font-bold text-yellow-300">keine Maklergebühren</span> an.
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md border border-gray-100">
-                    <h3 class="font-bold text-xl text-gray-900 mb-4">Top-Lage</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Eine Minute zur U-Bahn, wenige Minuten zur Uni – perfekt für Studenten.
-                    </p>
+                <!-- Highlight 6: Top-Lage -->
+                <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-secondary/30">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary to-green-500"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-green-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-location-dot text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4 group-hover:text-secondary transition-colors">Top-Lage</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Eine Minute zur U-Bahn, wenige Minuten zur Uni – perfekt für Studenten.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
