@@ -45,6 +45,13 @@
             background-attachment: fixed;
             position: relative;
         }
+        
+        /* Mobile: disable fixed background */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
 
         .hero-bg::before {
             content: '';
