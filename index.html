@@ -131,6 +131,16 @@
         }
         
         /* Table Styles */
+        .apartment-table {
+            font-size: 0.75rem;
+        }
+        
+        @media (min-width: 640px) {
+            .apartment-table {
+                font-size: 0.875rem;
+            }
+        }
+        
         .apartment-table tr {
             transition: all 0.2s ease;
         }
@@ -142,6 +152,18 @@
         
         .apartment-table thead th {
             background: #7A8681;
+            white-space: nowrap;
+        }
+        
+        /* Mobile table scroll indicator */
+        .table-scroll-hint {
+            display: block;
+        }
+        
+        @media (min-width: 1024px) {
+            .table-scroll-hint {
+                display: none;
+            }
         }
         
         /* Form Container */
@@ -159,6 +181,30 @@
         
         .mobile-menu.active {
             transform: translateX(0);
+        }
+        
+        /* Mobile Table Improvements */
+        @media (max-width: 640px) {
+            .apartment-table th,
+            .apartment-table td {
+                padding: 0.5rem !important;
+                font-size: 0.7rem !important;
+            }
+            
+            .apartment-table .w-10 {
+                width: 1.5rem !important;
+                height: 1.5rem !important;
+                margin-right: 0.25rem !important;
+            }
+            
+            .apartment-table .w-10 span {
+                font-size: 0.6rem !important;
+            }
+            
+            .apartment-table .inline-block {
+                padding: 0.25rem 0.5rem !important;
+                font-size: 0.65rem !important;
+            }
         }
         
         /* Scroll Animation */
@@ -361,18 +407,18 @@
             <p class="text-white/90 text-lg md:text-xl mb-6 font-light tracking-[0.2em] uppercase fade-in-up">
                 <i class="fa-solid fa-location-dot mr-2 text-secondary"></i>München Schwabing / Freimann
             </p>
-            <h1 class="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight fade-in-up" style="animation-delay: 0.2s; text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.9);">
-                Studentenappartements<br>
-                <span class="text-white" style="text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 0, 0, 0.8), -2px -2px 0 rgba(0,0,0,0.5);">AM ENGLISCHEN GARTEN</span>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight fade-in-up" style="animation-delay: 0.2s; text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.9);">
+                <span class="block sm:inline">Studentenappartements</span>
+                <span class="block sm:inline mt-2 sm:mt-0" style="text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 0, 0, 0.8), -2px -2px 0 rgba(0,0,0,0.5);">AM ENGLISCHEN GARTEN</span>
             </h1>
-            <p class="text-white/90 text-lg md:text-2xl mb-12 font-light max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.4s;">
+            <p class="text-white/90 text-base sm:text-lg md:text-2xl mb-6 sm:mb-10 md:mb-12 font-light max-w-2xl sm:max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.4s;">
                 Eine Minute zur U-Bahn, wenige Minuten zur Uni: Investieren Sie in eine der begehrtesten Studenten-Apartment(s)-Lagen der Landeshauptstadt.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up" style="animation-delay: 0.6s;">
-                <a href="#apartments" class="btn-primary bg-secondary text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-home mr-2"></i>Verfügbare Wohnungen
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center fade-in-up" style="animation-delay: 0.6s;">
+                <a href="#apartments" class="btn-primary bg-secondary text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-home mr-2"></i><span class="hidden xs:inline">Verfügbare </span>Wohnungen
                 </a>
-                <a href="#" onclick="openTourModal(event)" class="btn-primary bg-white text-primary px-10 py-4 rounded-full text-lg font-bold hover:bg-gray-50 transform hover:scale-105 transition duration-300">
+                <a href="#" onclick="openTourModal(event)" class="btn-primary bg-white text-primary px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:bg-gray-50 transform hover:scale-105 transition duration-300">
                     <i class="fa-solid fa-vr-cardboard mr-2"></i>360° Tour
                 </a>
             </div>
@@ -598,9 +644,9 @@
                 </div>
 
                 <div class="order-1 md:order-2">
-                    <div class="bg-gradient-to-br from-white to-primary/5 p-10 rounded-3xl shadow-xl border border-primary/10">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
-                        <i class="fa-solid fa-leaf text-accent text-3xl mr-4"></i>
+                    <div class="bg-gradient-to-br from-white to-primary/5 p-6 sm:p-10 rounded-3xl shadow-xl border border-primary/10">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center">
+                        <i class="fa-solid fa-leaf text-accent text-2xl sm:text-3xl mr-3 sm:mr-4"></i>
                         Nachhaltigkeit & Investment-Highlights
                     </h3>
                     <div class="space-y-6">
@@ -615,19 +661,19 @@
                         </div>
                     </div>
                     
-                    <div class="mt-8 p-6 bg-accent/10 rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-sm text-gray-600 mb-1">Ihr Vorteil</p>
-                                <p class="text-3xl font-bold gradient-text">bis 100.000 €</p>
+                    <div class="mt-6 sm:mt-8 p-4 sm:p-6 bg-accent/10 rounded-2xl">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div class="text-center sm:text-left">
+                                <p class="text-xs sm:text-sm text-gray-600 mb-1">Ihr Vorteil</p>
+                                <p class="text-2xl sm:text-3xl font-bold gradient-text">bis 100.000 €</p>
                             </div>
-                            <div class="text-right">
-                                <p class="text-sm text-gray-600 mb-1">Zinssatz</p>
-                                <p class="text-3xl font-bold text-secondary">ab 1,22 %</p>
+                            <div class="text-center sm:text-right border-t sm:border-t-0 border-gray-200 pt-4 sm:pt-0">
+                                <p class="text-xs sm:text-sm text-gray-600 mb-1">Zinssatz</p>
+                                <p class="text-2xl sm:text-3xl font-bold text-secondary">ab 1,22 %</p>
                             </div>
                         </div>
                         <p class="text-xs text-gray-500 mt-4 pt-4 border-t border-gray-200">
-                            Wir verweisen auf die folgende Quelle: <a href="https://www.kfw.de" target="_blank" class="text-secondary hover:underline">Klimafreundlicher Neubau – Wohngebäude (297, 298) | KfW</a>. Für die Richtigkeit der Angaben übernehmen wir keine Haftung.
+                            Wir verweisen auf die folgende Quelle: <a href="https://www.kfw.de" target="_blank" class="text-secondary hover:underline">KfW</a>. Für die Richtigkeit der Angaben übernehmen wir keine Haftung.
                         </p>
                     </div>
                 </div>
@@ -644,31 +690,31 @@
             </div>
             
             <!-- Floor Navigation -->
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="floor-nav-btn active" data-floor="all">Alle Etagen</button>
-                <button class="floor-nav-btn" data-floor="EG">Erdgeschoss (EG)</button>
-                <button class="floor-nav-btn" data-floor="OG">Obergeschoss (OG)</button>
-                <button class="floor-nav-btn" data-floor="DG">Dachgeschoss (DG)</button>
-                <button class="floor-nav-btn" data-floor="Spitzboden">Spitzboden</button>
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+                <button class="floor-nav-btn active text-xs sm:text-sm px-3 sm:px-6" data-floor="all">Alle</button>
+                <button class="floor-nav-btn text-xs sm:text-sm px-3 sm:px-6" data-floor="EG">EG</button>
+                <button class="floor-nav-btn text-xs sm:text-sm px-3 sm:px-6" data-floor="OG">OG</button>
+                <button class="floor-nav-btn text-xs sm:text-sm px-3 sm:px-6" data-floor="DG">DG</button>
+                <button class="floor-nav-btn text-xs sm:text-sm px-3 sm:px-6" data-floor="Spitzboden">Spitzboden</button>
             </div>
             
             <div class="space-y-6">
                 <!-- Floor Group: EG -->
                 <div class="floor-group" data-floor="EG">
-                    <div class="floor-header bg-gradient-to-r from-primary to-primary-dark text-white p-6 rounded-t-2xl cursor-pointer">
+                    <div class="floor-header bg-gradient-to-r from-primary to-primary-dark text-white p-4 sm:p-6 rounded-t-2xl cursor-pointer">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                                    <i class="fa-solid fa-1 text-2xl"></i>
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                                    <i class="fa-solid fa-1 text-xl sm:text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold">Erdgeschoss (EG)</h3>
-                                    <p class="text-white/80">6 Apartments • 20,16 - 26,60 m² • 319.830 - 437.231 €</p>
+                                    <h3 class="text-lg sm:text-2xl font-bold">Erdgeschoss (EG)</h3>
+                                    <p class="text-white/80 text-xs sm:text-sm hidden sm:block">6 Apartments • 20,16 - 26,60 m² • 319.830 - 437.231 €</p>
                                 </div>
                             </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">6 Apartments</span>
-                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            <div class="flex items-center space-x-2 sm:space-x-4">
+                                <span class="bg-white/20 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">6</span>
+                                <i class="fa-solid fa-chevron-down text-lg sm:text-xl transition-transform duration-300"></i>
                             </div>
                         </div>
                     </div>
@@ -700,20 +746,20 @@
 
                 <!-- Floor Group: OG -->
                 <div class="floor-group" data-floor="OG">
-                    <div class="floor-header bg-gradient-to-r from-secondary to-primary text-white p-6 rounded-t-2xl cursor-pointer">
+                    <div class="floor-header bg-gradient-to-r from-secondary to-primary text-white p-4 sm:p-6 rounded-t-2xl cursor-pointer">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                                    <i class="fa-solid fa-2 text-2xl"></i>
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                                    <i class="fa-solid fa-2 text-xl sm:text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold">Obergeschoss (OG)</h3>
-                                    <p class="text-white/80">8 Apartments • 20,76 - 23,73 m² • 340.791 - 389.973 €</p>
+                                    <h3 class="text-lg sm:text-2xl font-bold">Obergeschoss (OG)</h3>
+                                    <p class="text-white/80 text-xs sm:text-sm hidden sm:block">8 Apartments • 20,76 - 23,73 m² • 340.791 - 389.973 €</p>
                                 </div>
                             </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">8 Apartments</span>
-                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            <div class="flex items-center space-x-2 sm:space-x-4">
+                                <span class="bg-white/20 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">8</span>
+                                <i class="fa-solid fa-chevron-down text-lg sm:text-xl transition-transform duration-300"></i>
                             </div>
                         </div>
                     </div>
@@ -747,20 +793,20 @@
 
                 <!-- Floor Group: DG -->
                 <div class="floor-group" data-floor="DG">
-                    <div class="floor-header bg-gradient-to-r from-primary-dark to-secondary text-white p-6 rounded-t-2xl cursor-pointer">
+                    <div class="floor-header bg-gradient-to-r from-primary-dark to-secondary text-white p-4 sm:p-6 rounded-t-2xl cursor-pointer">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                                    <i class="fa-solid fa-3 text-2xl"></i>
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                                    <i class="fa-solid fa-3 text-xl sm:text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold">Dachgeschoss (DG)</h3>
-                                    <p class="text-white/80">8 Apartments • 18,81 - 21,69 m² • 311.781 - 359.040 €</p>
+                                    <h3 class="text-lg sm:text-2xl font-bold">Dachgeschoss (DG)</h3>
+                                    <p class="text-white/80 text-xs sm:text-sm hidden sm:block">8 Apartments • 18,81 - 21,69 m² • 311.781 - 359.040 €</p>
                                 </div>
                             </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">8 Apartments</span>
-                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            <div class="flex items-center space-x-2 sm:space-x-4">
+                                <span class="bg-white/20 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">8</span>
+                                <i class="fa-solid fa-chevron-down text-lg sm:text-xl transition-transform duration-300"></i>
                             </div>
                         </div>
                     </div>
@@ -794,20 +840,20 @@
 
                 <!-- Floor Group: Spitzboden -->
                 <div class="floor-group" data-floor="Spitzboden">
-                    <div class="floor-header bg-gradient-to-r from-accent to-secondary text-white p-6 rounded-t-2xl cursor-pointer">
+                    <div class="floor-header bg-gradient-to-r from-accent to-secondary text-white p-4 sm:p-6 rounded-t-2xl cursor-pointer">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                                    <i class="fa-solid fa-home text-2xl"></i>
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                                    <i class="fa-solid fa-home text-xl sm:text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold">Spitzboden</h3>
-                                    <p class="text-white/80">5 Apartments • 18,84 - 19,56 m² • 311.652 - 330.393 €</p>
+                                    <h3 class="text-lg sm:text-2xl font-bold">Spitzboden</h3>
+                                    <p class="text-white/80 text-xs sm:text-sm hidden sm:block">5 Apartments • 18,84 - 19,56 m² • 311.652 - 330.393 €</p>
                                 </div>
                             </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">5 Apartments</span>
-                                <i class="fa-solid fa-chevron-down text-xl transition-transform duration-300"></i>
+                            <div class="flex items-center space-x-2 sm:space-x-4">
+                                <span class="bg-white/20 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">5</span>
+                                <i class="fa-solid fa-chevron-down text-lg sm:text-xl transition-transform duration-300"></i>
                             </div>
                         </div>
                     </div>
@@ -916,7 +962,7 @@
                     </div>
                 </div>
                 
-                <div class="w-full h-[500px] rounded-2xl overflow-hidden shadow-xl border-2 border-gray-100">
+                <div class="w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl border-2 border-gray-100">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.5160123!2d11.615!3d48.182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7590d1234567%3A0xabcdef123456789!2sGrasmeierstra%C3%9Fe%208%2C%2080805%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1700000000000" 
                         width="100%" 
@@ -967,8 +1013,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gradient-to-br from-gray-50 to-primary/5 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
                 
-                <div class="md:w-1/2 p-10 md:p-12" id="crm-form-container">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <div class="md:w-1/2 p-6 sm:p-8 md:p-12" id="crm-form-container">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center">
                         <i class="fa-solid fa-paper-plane text-secondary text-2xl mr-3"></i>
                         Wohnung anfragen
                     </h2>
@@ -976,38 +1022,38 @@
                     <script type="text/javascript" src="https://propform.io/form/js/ns7rumG8yO2r"></script>
                 </div>
 
-                <div class="md:w-1/2 bg-gradient-to-br from-primary via-primary-dark to-secondary text-white p-10 md:p-12 flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-8">Persönlichen Beratungstermin vereinbaren</h3>
-                    <div class="space-y-8">
+                <div class="md:w-1/2 bg-gradient-to-br from-primary via-primary-dark to-secondary text-white p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">Persönlichen Beratungstermin vereinbaren</h3>
+                    <div class="space-y-6 sm:space-y-8">
                         <div class="flex items-start group">
-                            <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
-                                <i class="fa-solid fa-phone text-3xl text-secondary"></i>
+                            <div class="w-10 sm:w-14 h-10 sm:h-14 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fa-solid fa-phone text-xl sm:text-3xl text-secondary"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-white/70 mb-1">Telefon</p>
-                                <p class="text-2xl font-bold hover:text-secondary transition cursor-pointer">+49 (89) 1250 9039</p>
+                                <p class="text-xs sm:text-sm text-white/70 mb-1">Telefon</p>
+                                <p class="text-lg sm:text-2xl font-bold hover:text-secondary transition cursor-pointer">+49 (89) 1250 9039</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start group">
-                            <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
-                                <i class="fa-solid fa-envelope text-3xl text-secondary"></i>
+                            <div class="w-10 sm:w-14 h-10 sm:h-14 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fa-solid fa-envelope text-xl sm:text-3xl text-secondary"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-white/70 mb-1">E-Mail</p>
-                                <p class="text-2xl font-bold hover:text-secondary transition cursor-pointer">vertrieb@harvest-immobilien.com</p>
+                                <p class="text-xs sm:text-sm text-white/70 mb-1">E-Mail</p>
+                                <p class="text-xs sm:text-lg font-bold hover:text-secondary transition cursor-pointer">vertrieb@harvest-immobilien.com</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start group">
-                            <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
-                                <i class="fa-solid fa-building text-3xl text-secondary"></i>
+                            <div class="w-10 sm:w-14 h-10 sm:h-14 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-5 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fa-solid fa-building text-xl sm:text-3xl text-secondary"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-white/70 mb-1">Kontakt</p>
-                                <p class="text-lg font-semibold">Harvest Immobilien GmbH</p>
-                                <p class="text-white/90">Hartmannstraße 1</p>
-                                <p class="text-white/90">80333 München</p>
+                                <p class="text-xs sm:text-sm text-white/70 mb-1">Kontakt</p>
+                                <p class="text-base sm:text-lg font-semibold">Harvest Immobilien GmbH</p>
+                                <p class="text-white/90 text-sm">Hartmannstraße 1</p>
+                                <p class="text-white/90 text-sm">80333 München</p>
                             </div>
                         </div>
                     </div>
@@ -1017,9 +1063,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-400 py-16">
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-400 py-10 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                 <div>
                     <h4 class="text-white text-2xl font-bold mb-2">Harvest Immobilien GmbH</h4>
                     <p class="text-secondary font-medium">Ihr Exklusivvertrieb für die Grasmeierstraße 8</p>
