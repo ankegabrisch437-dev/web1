@@ -17,3 +17,4 @@ Thumbs.db
 # 其他
 *.pdf
 !README.pdf
+!grundrisse/*.pdf
